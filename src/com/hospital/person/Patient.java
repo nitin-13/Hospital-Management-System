@@ -4,20 +4,21 @@ package com.hospital.person;
 //Attributes - id and name (inherited from Person), DOB, Address, Contact No., Medical Records (obj of Medical Records Class)
 //Methods - getter and setter, overriding abstract method displayDetails
 
-import com.hospital.hospitalmodel.MedicalRecord;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Patient extends Person{
     private String dob; //Format - dd/mm/yyyy
     private String address;
     private String contactNumber;
-    private MedicalRecord medicalRecord;
+    private List <String> medicalRecords;
 
     public Patient(int id, String name, String dob, String address, String contactNumber) {
         super(id, name);
         this.dob = dob;
         this.address = address;
         this.contactNumber = contactNumber;
-        this.medicalRecord = new MedicalRecord();
+        this.medicalRecords = new ArrayList<>();
     }
 
     public String getAddress() {
@@ -32,8 +33,19 @@ public class Patient extends Person{
         return contactNumber;
     }
 
-    public MedicalRecord getMedicalRecord() {
-        return medicalRecord;
+    public void addMedicalRecord(String record) {
+        medicalRecords.add(record);
+    }
+
+    public String getMedicalRecord(){
+        if (medicalRecords.isEmpty()) {
+            return "No medical records available.";
+
+        }
+        for (String record : medicalRecords) {
+            return  record;
+        }
+        return null;
     }
 
     @Override

@@ -50,8 +50,8 @@ public class HospitalManagementSystem {
             fetchDoctor.displayDetails();
 
             //Add and display a medical record for a patient
-            fetchPatient.getMedicalRecord().addMedicalRecord("Has Sinus");
-            System.out.println("Patient "+fetchPatient.getId()+" "+fetchPatient.getMedicalRecord().displayMedicalRecords());
+            fetchPatient.addMedicalRecord("Has Sinus");
+            System.out.println("Patient "+fetchPatient.getId()+" "+fetchPatient.getMedicalRecord());
 
             //Display all doctors
             System.out.println("Print all Doctors : ");
